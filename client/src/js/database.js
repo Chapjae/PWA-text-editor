@@ -12,25 +12,25 @@ const initdb = async () =>
     },
   });
 
-export const putDb = async (id, content) => {
+export const putDb = async (content) => {
   console.error('putDb not implemented');
-  const contentDB = await openDB("content", 1);
-  const tx = contentDB.transaction("content", "readwrite");
-  const store = tx.objectStore("content");
-  const request = store.put({id: id, content: content});
+  const contentDB = await openDB("jate", 1);
+  const tx = contentDB.transaction("jate", "readwrite");
+  const store = tx.objectStore("jate");
+  const request = store.put({id: 1, value: content});
   const result = await request;
   return result
 }
 
 export const getDb = async () => {
   console.error('getDb not implemented');
-  const contentDB = await openDB("content", 1);
-  const tx = contentDB.transaction('content', 'readonly');
-  const store = tx.objectStore('content');
-  const request = store.getAll();
+  const contentDB = await openDB("jate", 1);
+  const tx = contentDB.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const request = store.get(1);
   const result = await request;
   console.log('result.value', result);
-  return result;
+  return result.value;
 }
 
 initdb();
