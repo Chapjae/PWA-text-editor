@@ -20,3 +20,4 @@ J.A.T.E. is a text editor that a user can initiate in their browser so that they
 ## Links
 
 [Github Repo](https://github.com/Chapjae/PWA-text-editor)
+[Heroku](https://jate-pwa-text-28772e10e86b.herokuapp.com/)
